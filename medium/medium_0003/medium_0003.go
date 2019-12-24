@@ -1,4 +1,4 @@
-package medium
+package medium_0003
 
 func lengthOfLongestSubstring(s string) int {
 	result := 0

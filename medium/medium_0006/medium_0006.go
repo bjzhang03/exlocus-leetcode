@@ -1,4 +1,4 @@
-package medium
+package medium_0006
 
 // 更牛逼的找规律的方法
 // https://blog.csdn.net/langmanqishizaijia/article/details/51154790

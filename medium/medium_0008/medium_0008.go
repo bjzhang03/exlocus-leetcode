@@ -1,4 +1,4 @@
-package medium
+package medium_0008
 
 func myAtoi(str string) int {
 	result := 0

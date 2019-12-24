@@ -1,4 +1,4 @@
-package medium
+package medium_0002
 
 import (
 	"strconv"

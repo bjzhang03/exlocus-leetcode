@@ -1,4 +1,4 @@
-package medium
+package medium_0005
 
 // https://blog.csdn.net/sodaoo/article/details/78564053
 func longestPalindrome(s string) string {

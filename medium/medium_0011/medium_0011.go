@@ -1,4 +1,4 @@
-package medium
+package medium_0011
 
 func maxArea(height []int) int {
 	result := 0

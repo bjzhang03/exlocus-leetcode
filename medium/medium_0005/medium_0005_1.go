@@ -1,4 +1,4 @@
-package medium
+package medium_0005
 
 import "fmt"
 
