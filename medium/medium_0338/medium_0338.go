@@ -1,5 +1,6 @@
 package medium_0338
 
+// 计算二进制数字中1的个数
 func countOne(num int) int {
 	result := 0
 	for num != 0 {
