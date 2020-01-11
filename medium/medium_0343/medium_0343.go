@@ -3,7 +3,7 @@ package medium_0343
 func integerBreak(n int) int {
 	result := 0
 	if n > 0 {
-		// 题目中已经假设n小于等于52了
+		// 题目中已经假设n小于等于58了
 		save := make([]int, 100)
 		save[1] = 1
 		save[2] = 1
