@@ -18,6 +18,7 @@ func wiggleSort(nums []int) {
 		right := append([]int{}, nums[count:]...)
 
 		nums = nums[0:0]
+		// 从后向前加数据,这个设计很巧妙,我没想出来，参照别人的思路
 		for len(left) > 0 && len(right) > 0 {
 			nums = append(nums, left[len(left)-1])
 			nums = append(nums, right[len(right)-1])
