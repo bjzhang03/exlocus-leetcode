@@ -6,20 +6,18 @@ func superPow(a int, b []int) int {
 	result := 1
 	if a > 1 {
 		a = a % modc
-
-		save := getcount(a, b)
+		save := dpsave(a, b)
 		for i := 0; i < len(b); i++ {
 			for j := 0; j < b[i]; j++ {
 				result = (result * save[i]) % modc
 			}
 		}
-
 	}
 	return result
 }
 
 // 临时变量,用于存储每一个的临时值
-func getcount(a int, b []int) []int {
+func dpsave(a int, b []int) []int {
 	result := make([]int, len(b))
 	result[len(b)-1] = a
 
