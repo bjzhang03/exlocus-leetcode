@@ -4,6 +4,7 @@ package medium_0390
 // https://www.cnblogs.com/wemo/p/10496189.html
 // 这个题目是一个数学题目
 // 我对这个题目的理解也不是很透彻
+// https://www.cnblogs.com/grandyang/p/5860706.html
 func lastRemaining(n int) int {
 	result := 0
 
