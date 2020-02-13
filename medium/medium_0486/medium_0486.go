@@ -2,6 +2,10 @@ package medium_0486
 
 import "fmt"
 
+// 这个题目是典型的minmax算法,不过我之前没有处理过minmax算法,所以我不会做,难过ing
+// 这里除了进行minmax算法之后,还进行了alpha-beta剪枝,aplha-beta剪枝 也是一个很好的思想
+// https://blog.csdn.net/zkybeck_ck/article/details/45644471
+// https://blog.csdn.net/pdfcxc/article/details/89281249
 func PredictTheWinner(nums []int) bool {
 	pone, ptwo := solve(nums)
 	fmt.Println(pone, ptwo)
