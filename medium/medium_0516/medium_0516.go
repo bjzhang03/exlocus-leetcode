@@ -1,5 +1,6 @@
 package medium_0516
 
+// 这个题目我做的不算是最优化的算法,还有改进的空间
 func longestPalindromeSubseq(s string) int {
 	if len(s) > 0 {
 		save := make([][]int, len(s))
