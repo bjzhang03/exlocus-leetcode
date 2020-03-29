@@ -13,13 +13,11 @@ func topKFrequent(words []string, k int) []string {
 				save[words[i]] = 1
 			}
 		}
-
 		data := []string{}
 		for key, _ := range save {
 			data = append(data, key)
 		}
 		sort.Sort(&frequent{data, save})
-
 		if len(data) <= k {
 			return data
 		} else if len(data) > k {
