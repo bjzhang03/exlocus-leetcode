@@ -1,4 +1,14 @@
 package medium_0199
+<<<<<<< HEAD:medium/medium_0199/medium_0199.go
+=======
+
+// Definition for a binary tree node.
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+>>>>>>> ccf62001e728049c9fa47645ff1f406b58578a46:medium/medium_0199/medium_0199.go
 
 func rightSideView(root *TreeNode) []int {
 	result := []int{}
