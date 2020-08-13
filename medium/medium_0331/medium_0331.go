@@ -19,7 +19,7 @@ func isValidSerialization(preorder string) bool {
 					if i+3 < len(orderstr) {
 						next = append(next, orderstr[i+3:]...)
 					}
-					break;
+					break
 				}
 			}
 			orderstr = next

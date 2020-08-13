@@ -32,8 +32,8 @@ func breadthFirstSearch(beginWord string, endWord string, wordList map[string]bo
 							return result
 						}
 						// 没有使用过,并且存在wordlist中
-						ok1 := usedWords[nextval];
-						ok2 := wordList[nextval];
+						ok1 := usedWords[nextval]
+						ok2 := wordList[nextval]
 						if !ok1 && ok2 {
 							nextQueue = append(nextQueue, nextval)
 							usedWords[nextval] = true
