@@ -1,4 +1,4 @@
-name: Ci-CD-Demo
+name: go-leetcode
 
 on:
   push:
