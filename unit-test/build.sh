@@ -7,4 +7,4 @@
 #!/bin/bash
 
 set -e
-go list github.com/bjzhang03/go-leetcode/... | xargs -t go build -v
+go list github.com/bjzhang03/go-leetcode/... | xargs -t -i go build -v {}
