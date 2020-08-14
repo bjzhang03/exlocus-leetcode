@@ -1,14 +1,4 @@
 package medium_0129
-<<<<<<< HEAD:medium/medium_0129/medium_0129.go
-=======
-
-// Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
->>>>>>> ccf62001e728049c9fa47645ff1f406b58578a46:medium/medium_0129/medium_0129.go
 
 func dfs(root *TreeNode, current int, save *int) {
 	if root.Left == nil && root.Right == nil {

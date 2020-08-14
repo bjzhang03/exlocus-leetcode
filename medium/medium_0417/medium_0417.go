@@ -1,7 +1,5 @@
 package medium_0417
 
-import "fmt"
-
 var xmul = 1000
 
 func pacificAtlantic(matrix [][]int) [][]int {
@@ -35,12 +33,10 @@ func pacificAtlantic(matrix [][]int) [][]int {
 			}
 		}
 	}
-	fmt.Println(result)
 	return result
 }
 
 func deepFirstSearch(matrix *[][]int, tarx, tary int, tarnum int, curx, cury int, save *map[int]bool) bool {
-	fmt.Println("num = ", tarnum, tarx, tary, curx, cury, *save)
 	if passCheck(curx, cury, matrix, save) {
 		if curx == tarx && cury == tary {
 			return true
@@ -79,8 +75,5 @@ func passCheck(x, y int, matrix *[][]int, save *map[int]bool) bool {
 		// 判断当前的数据是否是已经使用过了的数据
 		result = false
 	}
-
-	fmt.Println("check: ", x, y, *save, result)
-
 	return result
 }

@@ -1,9 +1,5 @@
 package medium_0464
 
-import (
-	"fmt"
-)
-
 func canIWin(maxChoosableInteger int, desiredTotal int) bool {
 	if maxChoosableInteger > 0 && desiredTotal > 0 && maxChoosableInteger*(maxChoosableInteger-1)/2 >= desiredTotal {
 		choose := make(map[int]bool, maxChoosableInteger)
@@ -18,7 +14,7 @@ func canIWin(maxChoosableInteger int, desiredTotal int) bool {
 
 func winSolve(choose map[int]bool, desired int, save *map[string]bool) bool {
 	//fmt.Println(choose, desired)
-	fmt.Println(len(choose), choose, desired)
+	//fmt.Println(len(choose), choose, desired)
 	// 对每一个可以使用的数据进行查找
 	for key, val := range choose {
 		if val {

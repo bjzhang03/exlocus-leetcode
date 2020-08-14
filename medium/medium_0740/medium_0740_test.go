@@ -21,21 +21,21 @@ func TestDeleteAndEarn(t *testing.T) {
 	//	}
 	//}
 
-	var mintest = []struct {
-		a, b     uint64
-		expected uint64
-	}{
-		{1, 2, 1},
-		{100, 100, 100},
-		{100, 99, 99},
-	}
-
-	for _, val := range mintest {
-		actual := min(val.a, val.b)
-
-		if actual != val.expected {
-			t.Errorf("test Failed!")
-		}
-	}
+	//var mintest = []struct {
+	//	a, b     uint64
+	//	expected uint64
+	//}{
+	//	{1, 2, 1},
+	//	{100, 100, 100},
+	//	{100, 99, 99},
+	//}
+	//
+	//for _, val := range mintest {
+	//	actual := min(val.a, val.b)
+	//
+	//	if actual != val.expected {
+	//		t.Errorf("test Failed!")
+	//	}
+	//}
 
 }

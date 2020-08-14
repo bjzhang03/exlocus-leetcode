@@ -1,14 +1,4 @@
 package medium_0095
-<<<<<<< HEAD:medium/medium_0095/medium_0095.go
-=======
-
-// Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
->>>>>>> ccf62001e728049c9fa47645ff1f406b58578a46:medium/medium_0095/medium_0095.go
 
 // 递归的思想进行处理
 func generateTreesRange(save []int, ins int, ine int) []*TreeNode {

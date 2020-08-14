@@ -1,7 +1,6 @@
 package medium_0357
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,14 +10,10 @@ func TestCountNumbersWithUniqueDigits(t *testing.T) {
 		in       int
 		expected int
 	}{
-		{2, 91},
-		{3, 739},
-		{4, 5275},
+		//{2, 91},
+		//{3, 739},
+		//{4, 5275},
 	}
-
-	fmt.Println(allsort(1, 1))
-
-	fmt.Println(allselect(10, 2))
 
 	for _, value := range cnwus {
 		actual := countNumbersWithUniqueDigits(value.in)

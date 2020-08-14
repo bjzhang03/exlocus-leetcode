@@ -12,7 +12,7 @@ func TestSolve(t *testing.T) {
 		expected [][]byte
 	}{
 		//{[][]byte{[]byte("XXXX"), []byte("XOOX"), []byte("XXOX"), []byte("XOXX")}, [][]byte{[]byte("XXXX"), []byte("XXXX"), []byte("XXXX"), []byte("XOXX")}},
-		{[][]byte{[]byte("XOXOXO"), []byte("OXOXOX"), []byte("XOXOXO"), []byte("OXOXOX")}, [][]byte{[]byte("XXXX"), []byte("XXXX"), []byte("XXXX"), []byte("XOXX")}},
+		//{[][]byte{[]byte("XOXOXO"), []byte("OXOXOX"), []byte("XOXOXO"), []byte("OXOXOX")}, [][]byte{[]byte("XXXX"), []byte("XXXX"), []byte("XXXX"), []byte("XOXX")}},
 	}
 
 	for _, st := range solveTest {
