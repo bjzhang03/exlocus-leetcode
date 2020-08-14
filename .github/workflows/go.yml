@@ -1,4 +1,4 @@
-name: Go
+name: Ci-CD-Demo
 
 on:
   push:
@@ -9,29 +9,32 @@ on:
 jobs:
 
   build:
+    # 作业名称为 Greeting
     name: Build
-    runs-on: ubuntu-latest
+    # 此作业在 Linux 上运行
+    runs-on: ubuntu-18.04
     steps:
-
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ^1.13
-      id: go
-
-    - name: Check out code into the Go module directory
-      uses: actions/checkout@v2
-
-    - name: Get dependencies
-      run: |
-        go get -v -t -d ./...
-        if [ -f Gopkg.toml ]; then
-            curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-            dep ensure
-        fi
-
-    - name: Build
-      run: go build -v .
-
-    - name: Test
-      run: go test -v .
+      # 设置go语言环境
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.13
+        id: go
+      #检查是否存放在指定的目录里面
+      - name: Check out code into the Go module directory
+        uses:
+          actions/checkout@v2
+      #获取go的依赖
+      - name: Get dependencies
+        run: |
+          go mod tidy
+      #运行指定的检查
+      - name: Check
+        run: |
+          go mod tidy
+      #指定指定的构建脚本
+      - name: Build
+        run: bash unit-test/build.sh
+      #运行指定的测试脚本
+      - name: Test
+        run: bash unit-test/run.sh
