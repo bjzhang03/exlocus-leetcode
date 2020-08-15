@@ -1,11 +1,5 @@
 package easy_0083
 
-// Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func deleteDuplicates(head *ListNode) *ListNode {
 	// 新建一个节点
 	result := &ListNode{0, nil}
@@ -25,7 +19,6 @@ func deleteDuplicates(head *ListNode) *ListNode {
 				// 后移一步
 				head = head.Next
 			}
-
 		}
 	}
 	return result.Next
