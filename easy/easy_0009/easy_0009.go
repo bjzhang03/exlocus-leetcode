@@ -9,7 +9,7 @@ func isPalindrome(x int) bool {
 	if x >= 0 {
 		result = true
 		str := strconv.Itoa(x)
-
+		
 		for i := 0; i <= len(str)-1-i; i++ {
 			if str[i] != str[len(str)-1-i] {
 				result = false
