@@ -1,12 +1,5 @@
 package easy_0101
 
-// Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func symmetric(p *TreeNode, q *TreeNode) bool {
 	result := true
 	if p == nil && q == nil {
