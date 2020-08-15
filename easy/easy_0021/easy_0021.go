@@ -1,11 +1,5 @@
 package easy_0021
 
-//Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	var result *ListNode
 	if l1 == nil && l2 == nil {
@@ -24,7 +18,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		result.Next = nil
 		tmp := result
-
+		/*比较数据的大小*/
 		for l1 != nil && l2 != nil {
 			if l1.Val < l2.Val {
 				tmp.Next = l1
@@ -38,7 +32,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 				tmp.Next = nil
 			}
 		}
-
+		/*添加上最后面的数据*/
 		if l1 != nil {
 			tmp.Next = l1
 		}
