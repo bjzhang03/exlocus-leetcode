@@ -2,6 +2,7 @@ package easy_0101
 
 import (
 	"fmt"
+	"math"
 	"testing"
 )
 
@@ -11,7 +12,7 @@ func TestIsSymmetric(t *testing.T) {
 		expected bool
 	}{
 		{buildTreeFromSlice([]int{1, 2, 2, 3, 4, 4, 3}, 0), true},
-		{buildTreeFromSlice([]int{1, 2, 2, -1, 3, -1, 3}, 0), false},
+		{buildTreeFromSlice([]int{1, 2, 2, math.MinInt32, 3, math.MinInt32, 3}, 0), false},
 	}
 
 	for _, val := range sy {
@@ -25,8 +26,8 @@ func TestIsSymmetric(t *testing.T) {
 }
 
 func buildTreeFromSlice(nums []int, position int) *TreeNode {
-	/*这里使用-1来约定数据是nil的*/
-	if position >= 0 && position < len(nums) && nums[position] != -1 {
+	/*这里使用math.MinInt32来约定数据是nil的*/
+	if position >= 0 && position < len(nums) && nums[position] != math.MinInt32 {
 		root := &TreeNode{nums[position], nil, nil}
 		root.Left = buildTreeFromSlice(nums, position*2+1)
 		root.Right = buildTreeFromSlice(nums, position*2+2)

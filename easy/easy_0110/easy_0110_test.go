@@ -2,6 +2,7 @@ package easy_0110
 
 import (
 	"fmt"
+	"math"
 	"testing"
 )
 
@@ -10,8 +11,8 @@ func TestIsBalanced(t *testing.T) {
 		root     *TreeNode
 		expected bool
 	}{
-		{buildTreeFromSlice([]int{3, 9, 20, -1, -1, 15, 7}, 0), true},
-		{buildTreeFromSlice([]int{1, 2, 2, 3, 3, -1, -1, 4, 4}, 0), false},
+		{buildTreeFromSlice([]int{3, 9, 20, math.MinInt32, math.MinInt32, 15, 7}, 0), true},
+		{buildTreeFromSlice([]int{1, 2, 2, 3, 3, math.MinInt32, math.MinInt32, 4, 4}, 0), false},
 	}
 
 	for _, val := range ib {
@@ -26,8 +27,8 @@ func TestIsBalanced(t *testing.T) {
 
 /*根据slice来构造一个二叉树*/
 func buildTreeFromSlice(nums []int, position int) *TreeNode {
-	/*这里使用-1来约定数据是nil的*/
-	if position >= 0 && position < len(nums) && nums[position] != -1 {
+	/*这里使用math.MinInt32来约定数据是nil的*/
+	if position >= 0 && position < len(nums) && nums[position] != math.MinInt32 {
 		root := &TreeNode{nums[position], nil, nil}
 		root.Left = buildTreeFromSlice(nums, position*2+1)
 		root.Right = buildTreeFromSlice(nums, position*2+2)

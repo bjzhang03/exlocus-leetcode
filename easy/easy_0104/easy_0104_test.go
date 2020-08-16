@@ -2,6 +2,7 @@ package easy_0104
 
 import (
 	"fmt"
+	"math"
 	"testing"
 )
 
@@ -10,7 +11,7 @@ func TestMaxDepth(t *testing.T) {
 		root     *TreeNode
 		expected int
 	}{
-		{buildTreeFromSlice([]int{3, 9, 20, -1, -1, 15, 7}, 0), 3},
+		{buildTreeFromSlice([]int{3, 9, 20, math.MinInt32, math.MinInt32, 15, 7}, 0), 3},
 	}
 
 	for _, val := range md {
@@ -23,8 +24,8 @@ func TestMaxDepth(t *testing.T) {
 }
 
 func buildTreeFromSlice(nums []int, position int) *TreeNode {
-	/*这里使用-1来约定数据是nil的*/
-	if position >= 0 && position < len(nums) && nums[position] != -1 {
+	/*这里使用math.MinInt32来约定数据是nil的*/
+	if position >= 0 && position < len(nums) && nums[position] != math.MinInt32 {
 		root := &TreeNode{nums[position], nil, nil}
 		root.Left = buildTreeFromSlice(nums, position*2+1)
 		root.Right = buildTreeFromSlice(nums, position*2+2)
