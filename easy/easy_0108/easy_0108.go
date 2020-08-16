@@ -1,12 +1,5 @@
 package easy_0108
 
-// Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func sortedArrayToBST(nums []int) *TreeNode {
 	if len(nums) > 0 {
 		tmpValue := nums[len(nums)/2]
