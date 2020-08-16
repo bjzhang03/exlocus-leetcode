@@ -1,16 +1,5 @@
 package easy_0112
 
-import (
-	"fmt"
-)
-
-// Definition for a binary tree node.
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 type TreeNodeSum struct {
 	*TreeNode
 	Sum int
@@ -19,7 +8,6 @@ type TreeNodeSum struct {
 func hasPathSum(root *TreeNode, sum int) bool {
 	sumResult := []int{}
 	result := false
-	fmt.Println(sumResult)
 	if root != nil {
 		queue := []*TreeNodeSum{}
 		queue = append(queue, &TreeNodeSum{root, root.Val})
