@@ -1,11 +1,5 @@
 package easy_0203
 
-// Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func removeElements(head *ListNode, val int) *ListNode {
 	if head != nil {
 		result := &ListNode{0, nil}
