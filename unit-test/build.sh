@@ -8,3 +8,5 @@
 
 set -e
 go list github.com/bjzhang03/go-leetcode/... | xargs -t -i go build -v {}
+
+exit 0
