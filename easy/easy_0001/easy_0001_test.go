@@ -14,6 +14,7 @@ func TestTwoSum(t *testing.T) {
 		expected []int
 	}{
 		{[]int{2, 7, 11, 15}, 9, []int{0, 1}},
+		{[]int{}, 0, []int{0, 0}},
 	}
 	/*执行矩阵测试*/
 	for _, val := range ts {
