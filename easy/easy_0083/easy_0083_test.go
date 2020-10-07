@@ -18,7 +18,7 @@ func TestDeleteDuplicates(t *testing.T) {
 		actual := deleteDuplicates(val.head)
 
 		if !listsEqual(val.expected, actual) {
-			t.Errorf("Test Failed! expected := %s, actual := %s", listSprint(val.expected), listSprint(actual))
+			t.Errorf("Test Failed! expected := %s, actual := %s", fmt.Sprint(val.expected), fmt.Sprint(actual))
 		}
 	}
 
@@ -55,17 +55,4 @@ func listsEqual(f *ListNode, s *ListNode) bool {
 		return true
 	}
 	return false
-}
-
-/*打印list的函数*/
-func listSprint(l *ListNode) string {
-	result := ""
-	for l != nil {
-		result = result + fmt.Sprint(l.Val)
-		if l.Next != nil {
-			result = result + "->"
-		}
-		l = l.Next
-	}
-	return result
 }
