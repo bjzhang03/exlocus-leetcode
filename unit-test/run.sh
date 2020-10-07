@@ -8,3 +8,5 @@
 
 set -e
 go list github.com/bjzhang03/go-leetcode/... | xargs -t -i go test -cover -race {}
+
+exit 0
