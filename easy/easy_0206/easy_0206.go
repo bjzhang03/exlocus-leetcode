@@ -1,11 +1,5 @@
 package easy_0206
 
-// Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func reverseList(head *ListNode) *ListNode {
 	if head != nil {
 		result := &ListNode{head.Val, nil}
