@@ -6,7 +6,7 @@ import (
 
 func TestDeleteAndEarn(t *testing.T) {
 
-	var dae = []struct {
+	var cases = []struct {
 		nums     []int
 		expected int
 	}{
@@ -25,7 +25,7 @@ func TestDeleteAndEarn(t *testing.T) {
 			71, 79, 66, 46}, 6238},
 	}
 
-	for _, val := range dae {
+	for _, val := range cases {
 		actual := deleteAndEarn(val.nums)
 		if actual != val.expected {
 			t.Errorf("Test Failed! input := %v, expected := %d, actual:= %d", val.nums, val.expected, actual)
