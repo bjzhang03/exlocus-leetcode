@@ -3,6 +3,7 @@ package medium_0638
 import "testing"
 
 func TestShoppingOffers(t *testing.T) {
+	// t.Parallel()  这个可以加也可以不加,暂时我还没有搞明白是啥用处
 	var so = []struct {
 		price   []int
 		special [][]int
