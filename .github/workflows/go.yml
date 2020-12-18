@@ -37,4 +37,4 @@ jobs:
         run: bash unit-test/build.sh
       #运行指定的测试脚本
       - name: Test
-        run: bash unit-test/run.sh
+        run: bash time unit-test/run.sh
