@@ -1,6 +1,7 @@
 package medium_0556
 
 import (
+	"fmt"
 	"math"
 	"sort"
 	"strconv"
@@ -36,10 +37,10 @@ func nextGreaterElement(n int) int {
 							}
 						}
 						sort.Ints(save)
-						// 转化为string
-						result := string(b[tari])
+						// 转化为string,这里转化成string没有颁发直接string了，需要通过这种方式进行处理了
+						result := fmt.Sprintf("%c", b[tari])
 						for i := 0; i < len(save); i++ {
-							result = result + string(save[i])
+							result = result + fmt.Sprintf("%c", save[i])
 						}
 						return result
 					}
