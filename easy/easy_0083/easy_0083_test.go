@@ -10,8 +10,8 @@ func TestDeleteDuplicates(t *testing.T) {
 		head     *ListNode
 		expected *ListNode
 	}{
-		{buildLists([]int{1, 1, 2}), buildLists([]int{1, 2})},
-		{buildLists([]int{1, 1, 2, 3, 3}), buildLists([]int{1, 2, 3})},
+		{buildListFromSlice([]int{1, 1, 2}), buildListFromSlice([]int{1, 2})},
+		{buildListFromSlice([]int{1, 1, 2, 3, 3}), buildListFromSlice([]int{1, 2, 3})},
 	}
 
 	for _, val := range dd {
@@ -25,7 +25,7 @@ func TestDeleteDuplicates(t *testing.T) {
 }
 
 /*根据数组构建lists*/
-func buildLists(vals []int) *ListNode {
+func buildListFromSlice(vals []int) *ListNode {
 	header := &ListNode{0, nil}
 	pointer := header
 
