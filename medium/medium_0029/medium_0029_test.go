@@ -1,29 +1,25 @@
 package medium_0029
 
 import (
+	"fmt"
 	"testing"
 )
 
 func TestDivide(t *testing.T) {
-
-	type divideStr struct {
+	var cases = []struct {
 		dividend int
 		divisor  int
-	}
-
-	var divideTest = []struct {
-		in       divideStr // input
-		expected int       // expected result
+		expected int // expected result
 	}{
-		{divideStr{10, 3}, 3},
-		{divideStr{7, -3}, -2},
-		{divideStr{-2147483648, -1}, 2147483647},
+		{10, 3, 3},
+		{7, -3, -2},
+		{-2147483648, -1, 2147483647},
 	}
 
-	for _, dt := range divideTest {
-		actual := divide(dt.in.dividend, dt.in.divisor)
-		if dt.expected != actual {
-			t.Errorf("actual = %d; expected %d", actual, dt.expected)
+	for _, val := range cases {
+		actual := divide(val.dividend, val.divisor)
+		if val.expected != actual {
+			t.Errorf("Test Failed! expected := %s, actual := %s", fmt.Sprint(val.expected), fmt.Sprint(actual))
 		}
 	}
 
