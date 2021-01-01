@@ -2,7 +2,6 @@ package medium_0016
 
 import (
 	"fmt"
-	"reflect"
 	"testing"
 )
 
@@ -19,7 +18,7 @@ func TestThreeSumClosest(t *testing.T) {
 	for _, val := range cases {
 		actual := threeSumClosest(val.nums, val.target)
 		/*验证结果*/
-		if !reflect.DeepEqual(actual, val.expected) {
+		if actual != val.expected {
 			t.Errorf("Test Failed! expected := %s, actual := %s", fmt.Sprint(val.expected), fmt.Sprint(actual))
 		}
 	}
