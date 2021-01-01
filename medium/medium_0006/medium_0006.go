@@ -20,7 +20,7 @@ func convert(s string, numRows int) string {
 	} else if len(s) > 0 && numRows > 2 {
 		save := make([][]uint8, numRows)
 		for i := 0; i < numRows; i++ {
-			save[i] = make([]uint8, len(s)/(numRows-2)+1)
+			save[i] = make([]uint8, len(s))
 		}
 		sindex := 0
 		for j := 0; j < len(s); j++ {
