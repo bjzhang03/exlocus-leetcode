@@ -15,15 +15,12 @@ func nextPermutation(nums []int) {
 			}
 		}
 		if p > 0 {
-			// fmt.Println("p = ", p)
 			left := nums[:p]
 			// 使用tmp来存储右边的最小的数字
 			mnumber := math.MaxInt32
 			mindex := -1
 			right := nums[p:]
-			// fmt.Println(left, right)
 			// 在右边找到最小的数据
-
 			for i := 0; i < len(right); i++ {
 				if right[i] > left[len(left)-1] && right[i] < mnumber {
 					mnumber = right[i]
@@ -37,8 +34,6 @@ func nextPermutation(nums []int) {
 
 			sort.Ints(right)
 			nums = append(left, right...)
-			// fmt.Println(append(left, right...))
-			// fmt.Println("left = ", left, " right = ", right)
 		} else {
 			start := 0
 			end := len(nums) - 1
@@ -50,6 +45,5 @@ func nextPermutation(nums []int) {
 				start++
 			}
 		}
-		// fmt.Println("nums = ", nums)
 	}
 }
