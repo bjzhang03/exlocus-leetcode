@@ -1,14 +1,11 @@
 package medium_0019
 
-import "fmt"
-
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	if head != nil {
 		// 计算一下一共有多少个节点
 		item := head
 		count := 0
 		for item != nil {
-			fmt.Println(item.Val, count)
 			count++
 			item = item.Next
 		}
