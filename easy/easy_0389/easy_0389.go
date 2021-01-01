@@ -14,7 +14,7 @@ func findTheDifference(s string, t string) byte {
 
 		for k, v := range countT {
 			if v > countS[k] {
-				return byte(k)
+				return k
 			}
 		}
 	}
