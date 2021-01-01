@@ -1,18 +1,5 @@
 package medium_0002
 
-import (
-	"strconv"
-)
-
-func (p *ListNode) String() string {
-	result := ""
-	for it := p; it != nil; it = it.Next {
-		result = result + strconv.Itoa(it.Val) + " "
-
-	}
-	return result
-}
-
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	//新建结果数据
 	result := &ListNode{0, nil}

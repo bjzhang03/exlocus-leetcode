@@ -8,7 +8,7 @@ import (
 
 func TestTwoSum(t *testing.T) {
 	/*构建矩阵测试的结构*/
-	var ts = []struct {
+	var cases = []struct {
 		nums     []int
 		target   int
 		expected []int
@@ -17,7 +17,7 @@ func TestTwoSum(t *testing.T) {
 		{[]int{}, 0, []int{0, 0}},
 	}
 	/*执行矩阵测试*/
-	for _, val := range ts {
+	for _, val := range cases {
 		actual := twoSum(val.nums, val.target)
 		/*验证结果*/
 		if !reflect.DeepEqual(actual, val.expected) {
