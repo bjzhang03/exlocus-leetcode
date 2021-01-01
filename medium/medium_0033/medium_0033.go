@@ -44,7 +44,6 @@ func search(nums []int, target int) int {
 					} else if nums[start] > target {
 						start = mid + 1
 					}
-
 				} else if nums[mid] < nums[start] {
 					// 后半部分是有序的
 					// 判断数据是在前面还是在后面
@@ -55,7 +54,6 @@ func search(nums []int, target int) int {
 					} else if target < nums[start] {
 						start = mid + 1
 					}
-
 				}
 			}
 		}
