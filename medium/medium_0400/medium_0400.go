@@ -1,13 +1,13 @@
-package easy_0400
+package medium_0400
 
 import (
 	"strconv"
 )
 
 func findNthDigit(n int) int {
-	if (n > 0) {
-		result := 0;
-		count := 1;
+	if n > 0 {
+		result := 0
+		count := 1
 		for n > 0 {
 			countStr := strconv.Itoa(count)
 			if len(countStr) >= n {
@@ -18,5 +18,5 @@ func findNthDigit(n int) int {
 		}
 		return result
 	}
-	return -1;
+	return -1
 }
