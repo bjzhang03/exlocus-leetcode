@@ -21,20 +21,15 @@ func hasslice(save [][]int, item []int) bool {
 }
 
 func dfs(nums []int, result *[][]int, save []int) {
-	// fmt.Println("nums = ", nums, "save = ", save)
 	if len(nums) == 0 {
-		// fmt.Println("if")
 		if !hasslice(*result, save) {
 			tmp := []int{}
 			tmp = append(tmp, save...)
 			*result = append(*result, tmp)
 		}
-		// fmt.Println("result = ", *result, "save = ", save)
 		return
 	} else if len(nums) > 0 {
-		// fmt.Println("else")
 		for i := 0; i < len(nums); i++ {
-			// fmt.Println("nums = ", nums, " i = ", i)
 			save = append(save, nums[i])
 			nextnums := []int{}
 			for j := 0; j < len(nums); j++ {
@@ -44,7 +39,6 @@ func dfs(nums []int, result *[][]int, save []int) {
 			}
 			dfs(nextnums, result, save)
 			save = save[:len(save)-1]
-			// fmt.Println("save = ", save)
 		}
 	}
 }
