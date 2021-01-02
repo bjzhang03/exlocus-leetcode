@@ -41,19 +41,19 @@ type handler struct {
 }
 
 // 获取此slice的长度
-func (in handler) Len() int { return len(in.intervals) }
+func (h handler) Len() int { return len(h.intervals) }
 
 // 自定义的排序算法
-func (in handler) Less(i, j int) bool {
-	if in.intervals[i][0] < in.intervals[j][0] {
+func (h handler) Less(i, j int) bool {
+	if h.intervals[i][0] < h.intervals[j][0] {
 		return true
 	}
 	return false
 }
 
 // 交换数据
-func (in handler) Swap(i, j int) {
-	tmp := append([]int{}, in.intervals[i]...)
-	in.intervals[i] = append(in.intervals[i][0:0], in.intervals[j]...)
-	in.intervals[j] = append(in.intervals[j][0:0], tmp...)
+func (h handler) Swap(i, j int) {
+	tmp := append([]int{}, h.intervals[i]...)
+	h.intervals[i] = append(h.intervals[i][0:0], h.intervals[j]...)
+	h.intervals[j] = append(h.intervals[j][0:0], tmp...)
 }
