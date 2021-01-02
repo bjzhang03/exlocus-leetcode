@@ -1,32 +1,59 @@
 package medium_0056
 
-// Definition for an interval.
-type Interval struct {
-	Start int
-	End   int
+import (
+	"sort"
+)
+
+func merge(intervals [][]int) [][]int {
+	// 这里只需要进行一次排序即可,减少时间的消耗
+	h := &handler{intervals: intervals}
+	sort.Sort(h)
+	return solve(h)
 }
 
-func merge(intervals []Interval) []Interval {
-	result := []Interval{}
-	if len(intervals) > 0 {
-		flag := true
-		usedinterval := make(map[int]bool)
-		for i := 0; i < len(intervals); i++ {
-			for j := i + 1; j < len(intervals); j++ {
-				// 以前没有被使用过的数据
-				if _, ok := usedinterval[j]; !ok {
-					if intervals[j].Start > intervals[i].Start && intervals[j].End < intervals[i].End {
-						usedinterval[j] = true
-					}
-				}
-
+func solve(h *handler) [][]int {
+	// 先对h进行排序
+	//sort.Sort(h)
+	//fmt.Printf("%s\n", fmt.Sprint(h.intervals))
+	for i := 0; i < h.Len(); i++ {
+		// 判断当前的数据是否是可以合并的
+		if i+1 < h.Len() && func(id1, id2 int, save [][]int) bool {
+			if save[id1][1] >= save[id2][0] {
+				return true
 			}
-			usedinterval[i] = true
-		}
-
-		if !flag {
-			result = merge(result)
+			return false
+		}(i, i+1, h.intervals) {
+			// 出现可以合并的则直接合并
+			if h.intervals[i][1] < h.intervals[i+1][1] {
+				return solve(&handler{intervals: append(append(append([][]int{}, h.intervals[:i]...), []int{h.intervals[i][0], h.intervals[i+1][1]}), h.intervals[i+2:]...)})
+			} else if h.intervals[i][1] >= h.intervals[i+1][1] {
+				return solve(&handler{intervals: append(append(append([][]int{}, h.intervals[:i]...), []int{h.intervals[i][0], h.intervals[i][1]}), h.intervals[i+2:]...)})
+			}
 		}
 	}
-	return result
+	// 没有出现可以合并的数据,则直接返回回来即可
+	return h.intervals
+}
+
+/*辅助处理的数据结构*/
+type handler struct {
+	intervals [][]int
+}
+
+// 获取此slice的长度
+func (in handler) Len() int { return len(in.intervals) }
+
+// 自定义的排序算法
+func (in handler) Less(i, j int) bool {
+	if in.intervals[i][0] < in.intervals[j][0] {
+		return true
+	}
+	return false
+}
+
+// 交换数据
+func (in handler) Swap(i, j int) {
+	tmp := append([]int{}, in.intervals[i]...)
+	in.intervals[i] = append(in.intervals[i][0:0], in.intervals[j]...)
+	in.intervals[j] = append(in.intervals[j][0:0], tmp...)
 }
