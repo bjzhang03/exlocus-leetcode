@@ -26,6 +26,7 @@ func TestGroupAnagrams(t *testing.T) {
 	}
 }
 
+/*判断两个string的集合是否相等*/
 func stringSetEqual(a [][]string, b [][]string) bool {
 	// 长度相等
 	if len(a) == len(b) {
