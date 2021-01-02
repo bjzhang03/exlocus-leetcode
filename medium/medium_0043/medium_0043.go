@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-func addstr(a string, b string) string {
+func addStr(a string, b string) string {
 	result := "0"
 	if len(a) > 0 && len(b) > 0 {
 		result = ""
@@ -47,7 +47,7 @@ func addstr(a string, b string) string {
 	return result
 }
 
-func multiplystr(nums string, p uint8) string {
+func multiplyStrUint(nums string, p uint8) string {
 	result := "0"
 	if len(nums) > 0 && p > '0' {
 		sn := len(nums) - 1
@@ -79,14 +79,14 @@ func multiply(num1 string, num2 string) string {
 			num2 = num1
 			num1 = tmp
 		}
-		result = addstr(result, result)
+		result = addStr(result, result)
 		for i := len(num2) - 1; i >= 0; i-- {
-			tmp := multiplystr(num1, num2[i])
+			tmp := multiplyStrUint(num1, num2[i])
 			for j := len(num2) - 1; j > i; j-- {
 				tmp = tmp + "0"
 			}
 			// fmt.Println("tmp = ", tmp)
-			result = addstr(result, tmp)
+			result = addStr(result, tmp)
 		}
 	}
 	return result
