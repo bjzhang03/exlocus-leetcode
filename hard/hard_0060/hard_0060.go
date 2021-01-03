@@ -1,4 +1,4 @@
-package medium_0060
+package hard_0060
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ func isAllPermutate(num []int, count int) bool {
 	if permutations[len(num)-1] == count || count == 0 {
 		return true
 	}
-	return false;
+	return false
 }
 
 func permutate(num []int, count int) string {

@@ -1,4 +1,4 @@
-package medium_0060
+package hard_0060
 
 import (
 	"reflect"

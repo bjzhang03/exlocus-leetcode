@@ -1,7 +1,5 @@
 package medium_0061
 
-import "fmt"
-
 func rotateRight(head *ListNode, k int) *ListNode {
 	result := &ListNode{0, nil}
 	if head != nil {
@@ -14,7 +12,6 @@ func rotateRight(head *ListNode, k int) *ListNode {
 		}
 
 		rotatek := k % count
-		fmt.Println(rotatek)
 
 		// 找到开始进行逆转的节点
 		start := 0
