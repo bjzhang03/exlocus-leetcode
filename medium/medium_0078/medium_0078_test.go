@@ -1,4 +1,4 @@
-package medium_0077
+package medium_0078
 
 import (
 	"fmt"
@@ -6,18 +6,19 @@ import (
 	"testing"
 )
 
-func TestCombine(t *testing.T) {
+func TestSubsets(t *testing.T) {
+	/*构建矩阵测试的结构*/
 	var cases = []struct {
-		n        int
-		k        int
-		expected [][]int // expected result
+		nums     []int
+		expected [][]int
 	}{
-		{4, 2, [][]int{{2, 4}, {3, 4}, {2, 3}, {1, 2}, {1, 3}, {1, 4}}},
-		{1, 1, [][]int{{1}}},
+		{[]int{1, 2, 3}, [][]int{{}, {1}, {2}, {1, 2}, {3}, {1, 3}, {2, 3}, {1, 2, 3}}},
+		{[]int{0}, [][]int{{}, {0}}},
 	}
-
+	/*执行矩阵测试*/
 	for _, val := range cases {
-		actual := combine(val.n, val.k)
+		actual := subsets(val.nums)
+		/*验证结果*/
 		if !sliceSetEqual(actual, val.expected) {
 			t.Errorf("Test Failed! expected := %s, actual := %s", fmt.Sprint(val.expected), fmt.Sprint(actual))
 		}
