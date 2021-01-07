@@ -113,6 +113,7 @@ func solve(str string) string {
 	return result
 }
 
+// 检查结果的正确性
 func check(str string) bool {
 	for i := 0; i < len(str); i++ {
 		if i+1 < len(str) && str[i] == str[i+1] {
