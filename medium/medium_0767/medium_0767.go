@@ -26,7 +26,6 @@ func solve(str string) string {
 		fmax := math.MinInt32
 		ssig := uint8('0')
 		smax := math.MinInt32
-
 		// 从数组中找出出现最多,第二多的数据
 		for key, val := range save {
 			if fmax == math.MinInt32 {
@@ -56,6 +55,7 @@ func solve(str string) string {
 				}
 			}
 		}
+		// 出现第一多和第二多一样的情况
 		if fmax == smax && len(result) > 0 {
 			if result[len(result)-1] == fsig {
 				if ssig != uint8('0') {
