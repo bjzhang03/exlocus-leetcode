@@ -1,6 +1,7 @@
 package medium_0779
 
-/*直接根据前面的一个来计算当前的数据的正确的结果*/
+/*直接根据前面的一个来计算当前的数据的正确的结果
+这个方法是自己想出来的,不是百度来的*/
 func kthGrammar(N int, K int) int {
 	if N == 1 && K == 1 {
 		return 0
