@@ -28,6 +28,7 @@ func TestLetterCasePermutation(t *testing.T) {
 
 }
 
+/*判断两个string的数组是否相等*/
 func strsEqual(a, b []string) bool {
 	if len(a) == len(b) {
 		sort.Strings(a)
